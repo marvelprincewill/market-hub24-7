@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7f5;
+  color: #222;
+  min-height: 100vh;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+  background: white;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #16834a;
+}
+
+.back-link {
+  color: #16834a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.account-container {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 16px;
+}
+
+.account-card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+}
+
+.brand-mark {
+  width: 45px;
+  height: 45px;
+  background: #16834a;
+  color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.account-heading h1 {
+  font-size: 25px;
+  margin-bottom: 9px;
+}
+
+.account-heading p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.account-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 5px;
+  border: none;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active {
+  color: #16834a;
+  border-bottom: 2px solid #16834a;
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.field input:focus {
+  border-color: #16834a;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: #16834a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+#formMessage {
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.account-footer {
+  margin-top: 25px;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.account-footer a {
+  color: #16834a;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 480px) {
+  .account-card {
+    padding: 25px 20px;
+  }
+
+  .account-header {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .back-link {
+    font-size: 12px;
+  }
+}

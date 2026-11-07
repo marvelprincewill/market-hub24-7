@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Market-HuB marketplace demo">
+  <title>Market-HuB | Online Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home">Market-<span>HuB</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+   <nav id="nav">
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#categories">Categories</a>
+  <a href="#sell">Sell Product</a>
+  <a href="#about">About</a>
+
+  <a href="account.html?mode=login" class="login-btn">
+  Login
+</a>
+
+<a href="account.html?mode=signup" class="signup-btn">
+  Sign Up
+</a>
+</nav>
+    <button class="cart-button" id="open-cart">🛒 Cart <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">WELCOME TO MARKET-HUB</p>
+        <h1>Discover great products.<br><span>Shop with confidence.</span></h1>
+        <p>Explore products from stores and sellers in one simple marketplace.</p>
+        <a class="button primary" href="#products">Explore products</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true"><span>🛍️</span><strong>Your marketplace starts here.</strong><small>Discover · Compare · Connect</small></div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-title"><p class="eyebrow">FIND YOUR STYLE</p><h2>Shop by category</h2></div>
+      <div class="category-list">
+        <button class="category active" data-category="All">All</button>
+        <button class="category" data-category="Electronics">Electronics</button>
+        <button class="category" data-category="Fashion">Fashion</button>
+        <button class="category" data-category="Home">Home</button>
+        <button class="category" data-category="Accessories">Accessories</button>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">HANDPICKED FOR YOU</p><h2>Featured products</h2></div>
+        <input class="search" id="search" type="search" placeholder="Search products..." aria-label="Search products">
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+      <p class="empty-message" id="empty-message" hidden>No products found. Try another search.</p>
+    </section>
+
+    <section class="seller-banner" id="sell">
+      <div><p class="eyebrow">FOR LOCAL SELLERS</p><h2>Ready to showcase your products?</h2>
+        <p>Market-HuB is designed to connect shoppers with sellers. Seller accounts and product uploads will be added when the backend is built.</p></div>
+      <a class="button light" href="#about">Learn more</a>
+    </section>
+
+    <section class="section about" id="about">
+      <p class="eyebrow">ABOUT US</p><h2>A marketplace built around discovery.</h2>
+      <p>Market-HuB is a marketplace project that aims to help customers discover products and connect with local stores. This version is a front-end demo. It does not yet process real payments, create accounts, or place real orders.</p>
+    </section>
+  </main>
+
+  <div class="backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="drawer-heading"><div><p class="eyebrow">YOUR ITEMS</p><h2>Shopping cart</h2></div>
+      <button class="close-button" id="close-cart" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"><p class="empty-cart">Your cart is empty.</p></div>
+    <div class="cart-footer">
+      <div class="total-line"><span>Subtotal</span><strong id="cart-total">₦0</strong></div>
+      <button class="button primary full" id="checkout-button" disabled>Proceed to checkout</button>
+      <small>Demo only. No payment will be collected.</small>
+    </div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkout-backdrop">
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <div class="drawer-heading"><div><p class="eyebrow">ORDER DETAILS</p><h2 id="checkout-title">Checkout</h2></div>
+        <button class="close-button" id="close-checkout" aria-label="Close checkout">×</button></div>
+      <form id="checkout-form">
+        <label>Full name<input id="customer-name" type="text" autocomplete="name" required></label>
+        <label>Email address<input id="customer-email" type="email" autocomplete="email" required></label>
+        <label>Delivery address<textarea id="customer-address" rows="3" required></textarea></label>
+        <div class="total-line"><span>Order total</span><strong id="checkout-total">₦0</strong></div>
+        <button class="button primary full" type="submit">Place demo order</button>
+        <small>This is a test form, not a real order or payment.</small>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer class="footer"><a class="logo" href="#home">Market-<span>HuB</span></a><p>© <span id="year"></span> Market-HuB. Marketplace demo.</p></footer>
+  <section id="login" class="account-section">
+  <div class="account-box">
+    <h2>Welcome Back!</h2>
+    <p>Login to your Market-HuB account.</p>
+
+    <form id="loginForm">
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="password"
+        placeholder="Password" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account?
+      <a href="#signup">Sign Up</a>
+    </p>
+  </div>
+</section>
+
+<section id="signup" class="account-section">
+  <div class="account-box">
+    <h2>Create Account</h2>
+    <p>Join the Market-HuB community.</p>
+
+    <form id="signupForm">
+      <input type="text" placeholder="Full Name" required>
+
+      <input type="email" placeholder="Email Address" required>
+
+      <input type="password"
+        placeholder="Create Password" minlength="8" required>
+
+      <button type="submit">Create Account</button>
+    </form>
+
+    <p>Already registered?
+      <a href="#login">Login</a>
+    </p>
+  </div>
+</section>
+</body>
+</html>

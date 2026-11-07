@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#16834a">
+
+  <title>Account | Market-HuB</title>
+
+  <link rel="stylesheet" href="account.css">
+</head>
+
+<body>
+
+  <header class="account-header">
+    <a href="index.html" class="logo">
+      Market-<span>HuB</span>
+    </a>
+
+    <a href="index.html" class="back-link">
+      ← Back to marketplace
+    </a>
+  </header>
+
+  <main class="account-container">
+
+    <section class="account-card">
+
+      <div class="brand-mark">M</div>
+
+      <div class="account-heading">
+        <h1 id="formTitle">Welcome back</h1>
+        <p id="formDescription">
+          Sign in to continue to your Market-HuB account.
+        </p>
+      </div>
+
+      <div class="account-tabs">
+        <button class="tab active" id="loginTab" type="button">
+          Login
+        </button>
+
+        <button class="tab" id="signupTab" type="button">
+          Create account
+        </button>
+      </div>
+
+      <form id="accountForm">
+
+        <div class="field" id="nameField" hidden>
+          <label for="fullName">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="Your full name"
+            autocomplete="name"
+          >
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Login
+        </button>
+
+        <p id="formMessage" role="status"></p>
+
+      </form>
+
+      <p class="account-footer">
+        By continuing, you agree to our
+        <a href="#">Terms</a> and
+        <a href="#">Privacy Policy</a>.
+      </p>
+
+    </section>
+
+  </main>
+
+  <script src="account.js"></script>
+</body>
+</html>
